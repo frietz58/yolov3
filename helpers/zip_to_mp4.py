@@ -68,6 +68,10 @@ def create_mp4_from_zip(zip_path, extract_path):
     # path where to save video
     mp4_save_path = os.path.join(extract_path, sample_name + ".mp4")
 
+    # skip if mp4 has already been created
+    if os.path.exists(mp4_save_path):
+        return None
+
     # write to out video file
     print("Writing images to video file now...")
 
